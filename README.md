@@ -1,5 +1,7 @@
 # Autodesk Task
 
+[I'm an inline-style link](https://github.com/Bmantl/AutodeskTask#goals)
+
 A story of matrix multiplication.
 
 ## Goals:
