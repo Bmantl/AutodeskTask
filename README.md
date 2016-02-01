@@ -2,8 +2,6 @@
 
 A story of matrix multiplication.
 
-This is an assignment from Autodesk.
-
 ## Goals:
   - Get in touch with JNI
   - Implement Matrix multiplication
@@ -16,16 +14,16 @@ This is an assignment from Autodesk.
   - Matrix.java - an implementation using a 2d double array
   - Matrix1D.java - an implementation using a 2d double array
 
-> Both can multiply using the multiplyBy(other) function.\
-> There is no relation between the classes as the use a different data structure.\
-> There are segments of code that looks almost the same, as the logic is identical betwee the two.\
+> Both can multiply using the multiplyBy(other) function.<br/>
+> There is no relation between the classes as the use a different data structure.<br/>
+> There are segments of code that looks almost the same, as the logic is identical betwee the two.<br/>
 > It seemed redundant to create some sort of super class (or interface) as the functions would have to be overriten  because of the different data structure.
 
 ##### C++
   - Mat.h/.cpp - an implementation using a 2d double array
   - Matrix.h/.cpp - an implementation using a 2d double array
 
-> Both can multiply using the multiplyBy(other) function.\
+> Both can multiply using the multiplyBy(other) function.<br/>
 > Design-wise, its identical to the Java variant.
 
 #### Program classes
@@ -35,17 +33,18 @@ This is an assignment from Autodesk.
 Usage in the usage part....
 
 #### Why two implementations? (2D, 1D)
-I started off with a simple 2d array implementation for both c++ and java, using primitive type arrays.
-It appears that this kind of implementation is quite slow (especially for the c++ part :\ ).\
+I started off with a simple 2d array implementation for both c++ and java, using primitive type arrays. <br/>
+It appears that this kind of implementation is quite slow (especially for the c++ part :\ ). <br/>
 Writing a 1D implementation of the matrix on c++ (using [i * rows + j] kind of querying) I got much (more than 100%) better results that the 2D implementation.
+
 I did a java one as well to have a good comparison (Java does quite well).
 
 *** All that said testing with a linux sitting on a vm.
 
 ### Compilation
 #### Jni part
-Located in the ```/jni``` folder there's a makefile.
-It generates .h files using javah and compiles the c++ code.
+Located in the ```/jni``` folder there's a makefile.<br/>
+It generates .h files using javah and compiles the c++ code.<br/>
 make sure that the dll/so/jnilib are there.
 
 ##### Warning:
@@ -74,18 +73,18 @@ $ javac Benchmark.java
 ```sh
 $ java -Djava.library.path=../jni Main -i <input-file-location> -o <output-file-location>
 ```
-```-i``` - an input file. There are files in the ```/Matrices``` folder.\
-```-o``` - an output file to write the multiplication resullt. Optional, but without it it will just multiply and quit (without any output).
+```-i``` - an input file. There are files in the ```/Matrices``` folder.<br/>
+```-o``` - ***Optional***. An output file to write the multiplication resullt. Optional, but without it it will just multiply and quit (without any output).
 
 #### Benchmark.class
-Used for benchmarking.
-Outputs running times for all implementations per input.
-Takes inputs from ```/Matrices``` folder.
+Used for benchmarking.<br/>
+Outputs running times for all implementations per input.<br/>
+Takes inputs from ```/Matrices``` folder.<br/>
 ```sh
 $ java -Djava.library.path=../jni Benchmark -s <start-size> -e <start-size>
 ```
-```-s``` - the start size for the benchmarking. Given in 1-20. i.e. 1 is for the 100.in file. 11 is for 1100.in\
-```-e``` - *This field is optional*. The end size for the benchmarking. Given in 1-20. i.e. 1 is for the 100.in file. 11 is for 1100.in \
+```-s``` - the start size for the benchmarking. Given in 1-20. i.e. 1 is for the 100.in file. 11 is for 1100.in<br/>
+```-e``` - ***Optional***. The end size for the benchmarking. Given in 1-20. i.e. 1 is for the 100.in file. 11 is for 1100.in <br/>
 the default will benchmark start + 5 size.
 
 Outputs a file in ```/Matrices``` called benchmark_s_e_numOfRunsPerFile.out
