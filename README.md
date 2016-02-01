@@ -1,6 +1,10 @@
 # Autodesk Task
 
-[I'm an inline-style link](https://github.com/Bmantl/AutodeskTask#goals)
+##### [Goals](https://github.com/Bmantl/AutodeskTask#goals)
+##### [Implementation](https://github.com/Bmantl/AutodeskTask#implementation)
+##### [Compilation](https://github.com/Bmantl/AutodeskTask#compilation)
+##### [Usage](https://github.com/Bmantl/AutodeskTask#usage)
+##### [Benchmark conclusions](https://github.com/Bmantl/AutodeskTask#benchmark-conclusions)
 
 A story of matrix multiplication.
 
