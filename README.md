@@ -1,4 +1,5 @@
 # Autodesk Task
+### A story of matrix multiplication.
 
 **[Goals](https://github.com/Bmantl/AutodeskTask#goals)**<br>
 **[Implementation](https://github.com/Bmantl/AutodeskTask#implementation)**<br>
@@ -6,7 +7,7 @@
 **[Usage](https://github.com/Bmantl/AutodeskTask#usage)**<br>
 **[Benchmark conclusions](https://github.com/Bmantl/AutodeskTask#benchmark-conclusions)**<br>
 
-A story of matrix multiplication.
+
 
 ## Goals:
   - Get in touch with JNI
