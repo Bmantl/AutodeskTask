@@ -81,7 +81,7 @@ $ javac Benchmark.java
 $ java -Djava.library.path=../jni Main -i <input-file-location> -o <output-file-location>
 ```
 ```-i``` - an input file. There are files in the ```/Matrices``` folder.<br/>
-```-o``` - ***Optional***. An output file to write the multiplication resullt. Optional, but without it it will just multiply and quit (without any output).
+```-o``` - ***Optional***. An output file to write the multiplication resullt. Optional, but without it it will multiply and save the result in the ```defOut.out``` file in the running folder.
 
 #### Benchmark.class
 Used for benchmarking.<br/>
