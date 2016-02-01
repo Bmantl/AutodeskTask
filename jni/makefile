@@ -4,7 +4,7 @@ CLASS_PATH = ../bin
 # Define a virtual path for .class in the bin directory
 vpath %.class $(CLASS_PATH)
 
-all: linMain.so
+all: libMain.so libBenchmark.so
 
 # $@ matches the target, $< matches the first dependancy
 libMain.so : Main.cpp Main.h Matrix.cpp Matrix.h

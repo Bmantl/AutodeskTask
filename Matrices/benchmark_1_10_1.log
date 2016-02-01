@@ -1,0 +1,41 @@
+Averaging over 1 runs per matrix size
+Java Multiplication 2D array Matrix Size 100 took 28Milis
+Java Multiplication 1D array Matrix Size 100 took 14Milis
+C++ Multiplication Using 1d Array 100 took 3Milis
+C++ Multiplication Using 2d Array Matrix Size 100 took 3Milis
+Java Multiplication 2D array Matrix Size 200 took 26Milis
+Java Multiplication 1D array Matrix Size 200 took 64Milis
+C++ Multiplication Using 1d Array 200 took 46Milis
+C++ Multiplication Using 2d Array Matrix Size 200 took 14Milis
+Java Multiplication 2D array Matrix Size 300 took 85Milis
+Java Multiplication 1D array Matrix Size 300 took 174Milis
+C++ Multiplication Using 1d Array 300 took 41Milis
+C++ Multiplication Using 2d Array Matrix Size 300 took 42Milis
+Java Multiplication 2D array Matrix Size 400 took 585Milis
+Java Multiplication 1D array Matrix Size 400 took 117Milis
+C++ Multiplication Using 1d Array 400 took 100Milis
+C++ Multiplication Using 2d Array Matrix Size 400 took 95Milis
+Java Multiplication 2D array Matrix Size 500 took 254Milis
+Java Multiplication 1D array Matrix Size 500 took 1028Milis
+C++ Multiplication Using 1d Array 500 took 204Milis
+C++ Multiplication Using 2d Array Matrix Size 500 took 236Milis
+Java Multiplication 2D array Matrix Size 600 took 2077Milis
+Java Multiplication 1D array Matrix Size 600 took 2214Milis
+C++ Multiplication Using 1d Array 600 took 1615Milis
+C++ Multiplication Using 2d Array Matrix Size 600 took 1891Milis
+Java Multiplication 2D array Matrix Size 700 took 1433Milis
+Java Multiplication 1D array Matrix Size 700 took 1052Milis
+C++ Multiplication Using 1d Array 700 took 539Milis
+C++ Multiplication Using 2d Array Matrix Size 700 took 4092Milis
+Java Multiplication 2D array Matrix Size 800 took 1162Milis
+Java Multiplication 1D array Matrix Size 800 took 5391Milis
+C++ Multiplication Using 1d Array 800 took 5814Milis
+C++ Multiplication Using 2d Array Matrix Size 800 took 6313Milis
+Java Multiplication 2D array Matrix Size 900 took 2096Milis
+Java Multiplication 1D array Matrix Size 900 took 1810Milis
+C++ Multiplication Using 1d Array 900 took 7723Milis
+C++ Multiplication Using 2d Array Matrix Size 900 took 8310Milis
+Java Multiplication 2D array Matrix Size 1000 took 12660Milis
+Java Multiplication 1D array Matrix Size 1000 took 2302Milis
+C++ Multiplication Using 1d Array 1000 took 10787Milis
+C++ Multiplication Using 2d Array Matrix Size 1000 took 12289Milis

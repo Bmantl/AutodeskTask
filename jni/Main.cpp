@@ -8,8 +8,33 @@
 #include "Main.h"
 #include "Matrix.h"
 
-double* objectArrayToMatrix(JNIEnv * env, jobject obj, jobjectArray a, int &rows, int &cols);
-jobjectArray MatrixToObjectArray(JNIEnv * env, jobject obj, const Matrix &m);
+/*
+	 * Method: objectArrayToMatrix
+	 * converts a jObjectArray to a 1D array (representing a matrix)
+	 *
+	 * params:
+	 * env - java environment object
+	 * a - object array representing a 2d double matrix
+	 * rows - ref to fill with row count
+	 * cols - ref to fill with row count
+	 *
+	 * returns:
+	 * a 1D array representing the matrix
+	 */
+double* objectArrayToMatrix(JNIEnv * env, jobjectArray a, int &rows, int &cols);
+
+/*
+	 * Method: objectArrayToMatrix
+	 * converts a Matrix object to a 2D jobject array
+	 *
+	 * params:
+	 * env - java environment object
+	 * m - the Matrix to convert
+	 *
+	 * returns:
+	 * 2D jobject array
+	 */
+jobjectArray MatrixToObjectArray(JNIEnv * env, const Matrix &m);
 
 JNIEXPORT jobject JNICALL Java_Main_readMatrices(JNIEnv * env, jobject object,
 		jstring str) {
@@ -23,8 +48,8 @@ JNIEXPORT jobject JNICALL Java_Main_readMatrices(JNIEnv * env, jobject object,
 	jmethodID mAdd = env->GetMethodID(cList, "add", "(Ljava/lang/Object;)Z");
 
 	vector<Matrix*> * matrices = Matrix::readMatrices(filename);
-	jobjectArray a = MatrixToObjectArray(env, object, *(*matrices)[0]);
-	jobjectArray b = MatrixToObjectArray(env, object, *(*matrices)[1]);
+	jobjectArray a = MatrixToObjectArray(env, *(*matrices)[0]);
+	jobjectArray b = MatrixToObjectArray(env, *(*matrices)[1]);
 	env->CallBooleanMethod(jList, mAdd, a);
 	env->CallBooleanMethod(jList, mAdd, b);
 
@@ -43,10 +68,12 @@ JNIEXPORT jobjectArray JNICALL Java_Main_multiply__Ljava_lang_String_2
 	string filename(env->GetStringUTFChars(str, NULL));
 	vector<Matrix*> * matrices = Matrix::readMatrices(filename);
 	Matrix *c = (*matrices)[0]->multiplyBy(*(*matrices)[1]);
+
+	//clean
 	delete (*matrices)[1];
 	delete (*matrices)[0];
 	delete matrices;
-	jobjectArray res = MatrixToObjectArray(env, obj, *c);
+	jobjectArray res = MatrixToObjectArray(env, *c);
 	delete c;
 	return res;
 }
@@ -66,6 +93,8 @@ JNIEXPORT void JNICALL Java_Main_multiply__Ljava_lang_String_2Ljava_lang_String_
 	outFile << outString;
 	outFile.close();
 	std::cout.rdbuf(cout_sbuf);
+
+	//clean
 	delete (*matrices)[1];
 	delete (*matrices)[0];
 	delete matrices;
@@ -78,21 +107,21 @@ JNIEXPORT jobjectArray JNICALL Java_Main_multiply___3_3D_3_3D(JNIEnv * env, jobj
 		jobjectArray a, jobjectArray b) {
 
 	int aRows, aCols, bRows, bCols;
-	double *A = objectArrayToMatrix(env, obj, a, aRows, aCols);
-	double *B = objectArrayToMatrix(env, obj, b, bRows, bCols);
+	double *aArray = objectArrayToMatrix(env, a, aRows, aCols);
+	double *bArray = objectArrayToMatrix(env, b, bRows, bCols);
 
-	Matrix AA(A, aRows, aCols);
-	Matrix BB(B, bRows, bCols);
+	Matrix A(aArray, aRows, aCols);
+	Matrix B(bArray, bRows, bCols);
 
-	Matrix *c = AA.multiplyBy(BB);
-	jobjectArray res = MatrixToObjectArray(env, obj, *c);
+	Matrix *c = A.multiplyBy(B);
+	jobjectArray res = MatrixToObjectArray(env, *c);
 	delete c;
 	return res;
 
 	return res;
 }
 
-double* objectArrayToMatrix(JNIEnv * env, jobject obj, jobjectArray a, int &rows, int &cols)
+double* objectArrayToMatrix(JNIEnv * env, jobjectArray a, int &rows, int &cols)
 {
 	rows = env->GetArrayLength(a);
 	jdoubleArray array1D = (jdoubleArray) env->GetObjectArrayElement(a, 0);
@@ -114,7 +143,7 @@ double* objectArrayToMatrix(JNIEnv * env, jobject obj, jobjectArray a, int &rows
 }
 
 
-jobjectArray MatrixToObjectArray(JNIEnv * env, jobject obj, const Matrix &m) {
+jobjectArray MatrixToObjectArray(JNIEnv * env, const Matrix &m) {
 	jclass intArray1DClass = env->FindClass("[D");
 
 	jobjectArray array2D = env->NewObjectArray(m.rows, intArray1DClass, NULL);

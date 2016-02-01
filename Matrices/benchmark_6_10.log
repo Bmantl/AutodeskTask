@@ -1,0 +1,21 @@
+Averaging over 4 runs per matrix size
+Java Multiplication 2D array Matrix Size 600 took 500Milis
+Java Multiplication 1D array Matrix Size 600 took 328Milis
+C++ Multiplication Using 1d Array 600 took 621Milis
+C++ Multiplication Using 2d Array Matrix Size 600 took 340Milis
+Java Multiplication 2D array Matrix Size 700 took 673Milis
+Java Multiplication 1D array Matrix Size 700 took 576Milis
+C++ Multiplication Using 1d Array 700 took 834Milis
+C++ Multiplication Using 2d Array Matrix Size 700 took 1043Milis
+Java Multiplication 2D array Matrix Size 800 took 1933Milis
+Java Multiplication 1D array Matrix Size 800 took 1504Milis
+C++ Multiplication Using 1d Array 800 took 5022Milis
+C++ Multiplication Using 2d Array Matrix Size 800 took 6219Milis
+Java Multiplication 2D array Matrix Size 900 took 2329Milis
+Java Multiplication 1D array Matrix Size 900 took 2035Milis
+C++ Multiplication Using 1d Array 900 took 8412Milis
+C++ Multiplication Using 2d Array Matrix Size 900 took 8842Milis
+Java Multiplication 2D array Matrix Size 1000 took 6348Milis
+Java Multiplication 1D array Matrix Size 1000 took 2364Milis
+C++ Multiplication Using 1d Array 1000 took 11065Milis
+C++ Multiplication Using 2d Array Matrix Size 1000 took 12629Milis

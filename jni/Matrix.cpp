@@ -59,6 +59,7 @@ char* Matrix::toString() {
 		s << "\n";
 	}
 	s << "-----------------------------------\n";
+
 	char * c= new char[s.str().length()];
 	strcpy(c, s.str().c_str());
 	std:: cout <<c;

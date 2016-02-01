@@ -1,0 +1,5 @@
+Averaging over 1 runs per matrix size
+Java Multiplication 2D array Matrix Size 300 took 195Milis
+Java Multiplication 1D array Matrix Size 300 took 123Milis
+C++ Multiplication Using 1d Array 300 took 41Milis
+C++ Multiplication Using 2d Array Matrix Size 300 took 45Milis
