@@ -7,6 +7,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+#undef Benchmark_numOfRuns
+#define Benchmark_numOfRuns 1L
 /*
  * Class:     Benchmark
  * Method:    multiplyUsingMat
